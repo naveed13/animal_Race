@@ -1,0 +1,41 @@
+<!DOCTYPE>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <title> Animal </title>
+</head>
+<body>
+<header style="font-family: monospace"> Animal </header>
+
+
+<script>
+
+function Animal (name, speed, focus) {
+
+
+  this.name = name;
+  this.speed = speed;
+  this.focus = focus;
+  this.position = 0;
+  this.run =function() {
+    if(Math.random()*10 <this.focus) {
+      this.position +=this.speed;
+    };
+  };
+  this.report = function() {
+    document.write(this.name + " has name " + this.position);
+  };
+}
+
+var rabbit = new Animal("Bugsy", 7, 2);
+var turtle = new Animal ("MO", 2, 8);
+
+while (rabbit.position <100 && turtle.position <100) {
+  rabbit.run();
+  turtle.run();
+
+  rabbit.report();
+  turtle.report();
+}
+</script>
